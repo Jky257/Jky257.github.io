@@ -53,9 +53,7 @@ $(function(){
 		$a_3_p = $('.a_3_p'),
 		$a_4_p = $('.a_4_p'),
 		$a_5_p = $('.a_5_p'),
-		$a_2_img = $('.a_2_img'),
-		$a_2_img_img = $('.a_2_img_img'),
-		$a_4_img_cry = $('.a_4_img_cry'),
+ 		$a_4_img_cry = $('.a_4_img_cry'),
 		$a_4_img_flash = $('.a_4_img_flash'),
 		$gototop = $('#gototop'),
 		$gototop_on = $('#gototop_on'),
@@ -76,10 +74,10 @@ $(function(){
 		if (padding_top_num<75) {
 			padding_top_num = 75;
 		};
-		console.log(w_height +"/" +v_height +"/" +padding_top_num);
+		//console.log(w_height +"/" +v_height +"/" +padding_top_num);
 		var padding_top = "padding-top:" + padding_top_num + "px"; 
 		$container.attr('style',padding_top);
-		console.log('暂不支持低版本IE，后续更新！--From Apollozz')
+		console.log('暂不支持低版本IE，后续更新！--From Amy')
 	}
 	tvMiddle();
 
@@ -168,7 +166,7 @@ $(function(){
 				},200);
 				
 			}
-			// 点击前端实习
+			/*// 点击前端实习
 			else if(cats_index == 2){
 				tvContChange();
 				fileLeft();
@@ -176,9 +174,9 @@ $(function(){
 				setTimeout(function(){
 					$my_intern_cont.addClass('my_intern_cont_move');
 				},200);
-			}
+			}*/
 	        // 点击其他经历
-			else if (cats_index == 3) {
+			/*else if (cats_index == 3) {
 				tvContChange();
 				fileLeft();
 				$my_exp.show();
@@ -187,7 +185,7 @@ $(function(){
 					$my_exp_box.eq(1).addClass('my_exp_box_2_move');
 					$my_exp_box.eq(2).addClass('my_exp_box_3_move');
 				},200);	
-			}
+			}*/
 		}
 		else{
 			$tv_ps.addClass('tv_ps_move');
@@ -333,9 +331,7 @@ $(function(){
 			$view_off.addClass('view_off_move');
 		},5400);
 	}
-
-
-	
+  	
 	// 点击一键面试
 	$control_view.click(function(){
 		showQList();
@@ -385,10 +381,7 @@ $(function(){
 		$a_2_p.eq(2).removeClass('a_2_p_3');
 		$a_2_p.eq(3).removeClass('a_2_p_4');
 		$a_2_p.eq(4).removeClass('a_2_p_5');
-		$a_2_img.removeClass('a_2_img_show');
-		$a_2_img_img.removeClass('a_2_img_img_move');
-
-		$a_3_p.eq(0).removeClass('a_3_p_1');
+ 		$a_3_p.eq(0).removeClass('a_3_p_1');
 		$a_3_p.eq(1).removeClass('a_3_p_2');
 		$a_3_p.eq(2).removeClass('a_3_p_3');
 		$a_3_p.eq(3).removeClass('a_3_p_4');
@@ -440,9 +433,7 @@ $(function(){
 			$a_2_p.eq(2).addClass('a_2_p_3');
 			$a_2_p.eq(3).addClass('a_2_p_4');
 			$a_2_p.eq(4).addClass('a_2_p_5');
-			$a_2_img.addClass('a_2_img_show');
-			$a_2_img_img.addClass('a_2_img_img_move');
-		},100);
+ 		},100);
 	});
 
 	// 第三个问题答案出现
@@ -534,7 +525,6 @@ $(function(){
 		});
 	};
 
-	gotoTop(300,600); 
-
-
+	gotoTop(100,300); 
 });
+ 
