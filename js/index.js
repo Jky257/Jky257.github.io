@@ -15,7 +15,7 @@ $(function(){
 		$my_intern = $('.my_intern'),
 		$my_intern_cont = $('.my_intern_cont'),
 		$my_exp = $('.my_exp'),
-		$my_exp_box = $('.my_exp_box'),
+		$my_exp_cont = $('.my_exp_cont'),
 		$tv_btn = $('.tv_btn'),
 		$tv_blank = $('.tv_blank'),
 		$tv_blank_up = $('.tv_blank_up'),
@@ -53,8 +53,7 @@ $(function(){
 		$a_3_p = $('.a_3_p'),
 		$a_4_p = $('.a_4_p'),
 		$a_5_p = $('.a_5_p'),
- 		$a_4_img_cry = $('.a_4_img_cry'),
-		$a_4_img_flash = $('.a_4_img_flash'),
+ 		$a_4_img_star = $('.a_4_img_star'),
 		$gototop = $('#gototop'),
 		$gototop_on = $('#gototop_on'),
 		$body = $('body'),
@@ -127,10 +126,7 @@ $(function(){
 		setTimeout(function(){
 			$my_skill_row_div.removeClass('my_skill_move');
 			$my_intern_cont.removeClass('my_intern_cont_move');
-			$my_exp_box.eq(0).removeClass('my_exp_box_1_move');
-			$my_exp_box.eq(1).removeClass('my_exp_box_2_move');
-			$my_exp_box.eq(2).removeClass('my_exp_box_3_move');
-		},100);
+ 		},100);
 	}
 
     // 遥控器上点击不同资料按钮，电视内容切换
@@ -166,7 +162,7 @@ $(function(){
 				},200);
 				
 			}
-			/*// 点击前端实习
+			// 点击前端实习
 			else if(cats_index == 2){
 				tvContChange();
 				fileLeft();
@@ -174,18 +170,16 @@ $(function(){
 				setTimeout(function(){
 					$my_intern_cont.addClass('my_intern_cont_move');
 				},200);
-			}*/
-	        // 点击其他经历
-			/*else if (cats_index == 3) {
+			}
+	        //点击项目经验
+			else if (cats_index == 3) {
 				tvContChange();
 				fileLeft();
 				$my_exp.show();
 				setTimeout(function(){
-					$my_exp_box.eq(0).addClass('my_exp_box_1_move');
-					$my_exp_box.eq(1).addClass('my_exp_box_2_move');
-					$my_exp_box.eq(2).addClass('my_exp_box_3_move');
+					$my_exp_cont.addClass('my_exp_cont_move');
 				},200);	
-			}*/
+			}
 		}
 		else{
 			$tv_ps.addClass('tv_ps_move');
@@ -394,8 +388,7 @@ $(function(){
 		$a_4_p.eq(3).removeClass('a_4_p_4');
 		$a_4_p.eq(4).removeClass('a_4_p_5');
 		$a_4_p.eq(5).removeClass('a_4_p_6');
-		$a_4_img_cry.removeClass('a_4_img_cry_move');
-		$a_4_img_flash.removeClass('a_4_img_flash_move');
+ 		$a_4_img_star.removeClass('a_4_img_star_move');
 
 		$a_5_p.eq(0).removeClass('a_5_p_1');
 		$a_5_p.eq(1).removeClass('a_5_p_2');
@@ -461,8 +454,8 @@ $(function(){
 			$a_4_p.eq(3).addClass('a_4_p_4');
 			$a_4_p.eq(4).addClass('a_4_p_5');
 			$a_4_p.eq(5).addClass('a_4_p_6');
-			$a_4_img_cry.addClass('a_4_img_cry_move');
-			$a_4_img_flash.addClass('a_4_img_flash_move');
+			//$a_4_img_cry.addClass('a_4_img_cry_move');
+			$a_4_img_star.addClass('a_4_img_star_move');
 		},100);
 	});
 
