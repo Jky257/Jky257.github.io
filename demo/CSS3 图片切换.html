@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <title>CSS3 图片切换</title>
 <style>
-
 *{margin:0;padding:0;list-style:none;}
 body{ background:pink;}
 #ul1{ position:relative;width:480px; height:260px; background:#ccc; margin:100px auto;}
 #ul1 li{ position:absolute;left:0;top:0; opacity:0;
-	transform: perspective(800px) rotateY(0deg);
-	transition:1s all ease;
+	     transform: perspective(800px) rotateY(0deg);
+	     transition:1s all ease;
 }
-
+#ul1 li img{border-radius:8px;}
 #ul1 li.l2{ opacity:0; transform: perspective(800px) translateX(-300px) rotateY(45deg); z-index:1;}
 #ul1 li.l1{ opacity:1; transform: perspective(800px) translateX(-200px) rotateY(45deg); z-index:3;}
 #ul1 li.cur{ opacity:1; z-index:5;}
 
 #ul1 li.r1{ opacity:1; transform: perspective(800px) translateX(200px) rotateY(-45deg); z-index:3;}
 #ul1 li.r2{ opacity:0; transform: perspective(800px) translateX(300px) rotateY(-45deg); z-index:1;}
-
+#btn_prev{margin-left:45%;}
+#btn_prev,#btn_next{ display:inline; background:#EB4A4A; width:60px; height:30px;border-radius:10px; }
 </style>
 
 </head>
@@ -69,8 +69,6 @@ window.onload = function(){
 
 </script>
 <body>
-<input id="btn_prev" type="button" value="上一张"/>
-<input id="btn_next" type="button" value="下一张"/>
 <ul id="ul1">
 	<li class="l2"><img src="images/wm1.jpg"/></li>
 	<li class="l1"><img src="images/wm2.jpg" /></li>
@@ -81,6 +79,7 @@ window.onload = function(){
 	<li><img src="images/wm7.jpg" /></li>
 	<li><img src="images/wm8.jpg" /></li>
 </ul>
-
+<input id="btn_prev" type="button" value="上一张"/>
+<input id="btn_next" type="button" value="下一张"/>
 </body>
 </html>

@@ -2,21 +2,21 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>拖拽咖啡</title>
 <style>
-body{background:#C6C7F1;}
-*{margin:0; padding:0; list-style:none; }
-#ul1{width:780px; margin:20px auto; position:relative;}
-#ul1 li{float:left; width:200px; height:200px; box-shadow:0 0 5px #999; border-radius:30px; margin:20px;}
-#ul1 li img{width:200px; height:200px; border-radius:30px;}
+*{ margin:0; padding:0; list-style:none; }
+body{ background:#F0CAA9; font-size:20px;}
+#ul1{width:720px; height:720px; margin:10px auto;}
+#ul1 li{ float:left; display:inline; width:200px; height:200px; box-shadow:0 0 8px #999; border-radius:30px; margin:20px;}
+#ul1 li img{ width:200px; height:200px; border-radius:30px;}
 </style>
 <script src="move9.js"></script>
-<script>window.onload=function(){
+<script>
+window.onload=function(){
 	var aLi=document.getElementById('ul1').children;
 	var aImg=aLi.children;
 	var zIndex=2;
-	
-	//布局转换
+ 	//布局转换
 	var aPos=[];
 	for(var i=0;i<aLi.length;i++){
 		aPos.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop});	
@@ -28,27 +28,39 @@ body{background:#C6C7F1;}
 		aLi[i].style.margin=0;
 		aLi[i].index=i;
 	}
-	
-	//添加拖拽
+ 	//添加拖拽
 	for(var i=0;i<aLi.length;i++){
 		drag(aLi[i]);
 	}	
-	
-	//拖拽封装
+ 	//拖拽封装
 	function drag(obj){
 		obj.onmousedown=function(ev){
 			obj.style.zIndex=zIndex++;
 			clearInterval(obj.timer);//防止运动过程中按下
 			
 			var oEvt=ev||event;
-			var disX=oEvt.clientX-obj.offsetLeft;
-			var disY=oEvt.clientY-obj.offsetTop;
+			var disX=oEvt.clientX - obj.offsetLeft;
+			var disY=oEvt.clientY - obj.offsetTop;
 			document.onmousemove=function(ev){
 				var oEvt=ev||event;
-				obj.style.left=oEvt.clientX-disX+'px';
-				obj.style.top=oEvt.clientY-disY+'px';	
-				
-				//交换位置
+				//obj.style.left=oEvt.clientX-disX+'px';
+               //obj.style.top=oEvt.clientY-disY+'px';
+			   //做限定
+			   var l = oEvt.clientX - disX;
+			   var t = oEvt.clientY - disY;
+			   if(l>=document.documentElement.clientWidth - obj.offsetWidth){
+					l = document.documentElement.clientWidth - obj.offsetWidth; 
+			    }else if(l<=0){
+					l = 0;	
+				}
+				if(t>=document.documentElement.clientHeight - obj.offsetHeight){
+					t = document.documentElement.clientHeight - obj.offsetHeight; 	
+				}else if(t<=0){
+					t = 0;	
+				}
+				obj.style.left = l + "px";
+				obj.style.top = t + "px";
+ 				//交换位置
 				var nearObj=findNearest(obj);//碰撞检测+找最近
 				if(nearObj && nearObj!=obj){
 					
@@ -65,12 +77,10 @@ body{background:#C6C7F1;}
 							aLi[i].index++;
 							move(aLi[i],aPos[aLi[i].index]);
 						}
-						
-					}
+ 					}
 					obj.index=m;//obj的索引等于被撞到的 near(m)
 				}
-				
-			};
+ 			};
 			document.onmouseup=function(){
 				document.onmousemove=document.onmouseup=null;
 				
@@ -82,8 +92,7 @@ body{background:#C6C7F1;}
 			return false;	
 		};	
 	}
-	
-	function findNearest(obj){
+ 	function findNearest(obj){
 		var minDis=99999999999999;//距离
 		var minDisIndex=-1;//下标
 		for(var i=0;i<aLi.length;i++){
@@ -103,14 +112,12 @@ body{background:#C6C7F1;}
 			return aLi[minDisIndex]	//丢出去最近的li	
 		}
 	}
-	
-	function getDis(obj1,obj2){//obj1到obj2的房子的距离
+ 	function getDis(obj1,obj2){//obj1到obj2的房子的距离
 		var a=aPos[obj2.index].top-obj1.offsetTop;
 		var b=aPos[obj2.index].left-obj1.offsetLeft;
 		return Math.sqrt(a*a+b*b);
 	}
-	
-	function collTest(obj1,obj2){//要和obj2的房子
+ 	function collTest(obj1,obj2){//要和obj2的房子
 		var l1=obj1.offsetLeft;
 		var t1=obj1.offsetTop;
 		var r1=obj1.offsetLeft+obj1.offsetWidth;
@@ -132,11 +139,11 @@ body{background:#C6C7F1;}
 };
 </script>
 </head>
-
 <body>
-	<ul id="ul1">
+    休息时间，来杯咖啡吧~~~可以随意拖拽
+ 	<ul id="ul1">
     	<li>
-        	<img src="images/1-12100319323C16.jpg"/>
+        	<img src="images/2-130911222FMO.jpg"/>
         </li>
         <li>
         	<img src="images/1-121003193244R9.jpg"/>
@@ -144,15 +151,26 @@ body{background:#C6C7F1;}
         <li>
         	<img src="images/11-130930120159.jpg"/>
         </li>
+        
         <li>
-        	<img src="images/11-130930120203.jpg"/>
+        	<img src="images/1-12100319325A.jpg"/>
         </li>
         <li>
-        	<img src="images/11-130930120206.jpg"/>
+        	<img src="images/1-12130098787.jpg"/>
         </li>
         <li>
-        	<img src="images/20131026105711307.jpg"/>
+        	<img src="images/1-1213006785.jpg"/>
+        </li>
+        <li>
+        	<img src="images/1-121347655.jpg"/>
+        </li>
+        <li>
+        	<img src="images/1-1213002655.jpg"/>
+        </li>
+        <li>
+        	<img src="images/1-121384658.jpg"/>
         </li>
      </ul>
+    
 </body>
 </html>
