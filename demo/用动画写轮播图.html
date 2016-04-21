@@ -2,38 +2,42 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>轮播图</title>
+<title>动画轮播图</title>
 <style>
 body{background:#F7CB8C;}
 *{margin:0; padding:0; list-style:none;}
 #div1{position:relative; width:500px; height:332px; background:#ccc; margin:200px auto; overflow:hidden;}
-#div1 ul{position:absolute; left:0; top:0; width:2500px; height:100%; animation:test 5s ease infinite;}
-#div1 ul li{width:500px;; height:100%;float:left;}
+#div1 ul{position:absolute; left:0; top:0; width:2500px; height:332px; animation:test 8s ease infinite;}
+#div1 ul li{width:500px; height:100%;float:left;}
 #div1:hover ul{animation-play-state:paused;}
 @keyframes test{
 	0%{
 		left:0px;	
 	}
-	23%{
+	20%{
 		left:-500px	
 	}
-	33%{
+	35%{
 		left:-500px	
 	}
-	56%{
+	48%{
 		left:-1000px	
 	}
-	66%{
+	60%{
 		left:-1000px	
 	}
-	
-	90%{
+ 	73%{
 		left:-1500px;	
+	}
+	80%{
+		left:-1500px;	
+	}
+	90%{
+		left:-2000px;
 	}
 	100%{
-		left:-1500px;	
+		left:-2000px;	
 	}
-	 
 }
 </style>
 </head>
@@ -42,6 +46,9 @@ body{background:#F7CB8C;}
 <div id="div1">
 	<ul>
     	<li>
+        	<img src="images/kf0.jpg"/>
+        </li>
+        <li>
         	<img src="images/kf1.jpg"/>
         </li>
         <li>
@@ -50,13 +57,10 @@ body{background:#F7CB8C;}
         <li>
         	<img src="images/kf3.jpg"/>
         </li>
-        <li>
+         <li>
         	<img src="images/kf4.jpg"/>
         </li>
-         <li>
-        	<img src="images/kf5.jpg"/>
-        </li>
-    </ul>
+     </ul>
 </div>
 </body>
 </html>
